@@ -37,7 +37,7 @@ const NearbyPlacesTable: FC<INearbyPlacesTableProps> = ({ business }) => {
                   </Link>
                 </td>
                 <td>
-                  <Link to={`/business/${business.id}`}>
+                  <Link to={`/business/${item.id}`}>
                     {item.address.street}, {item.address.number}, {item.address.country} {item.address.zip}
                   </Link>
                 </td>
