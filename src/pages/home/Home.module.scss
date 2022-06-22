@@ -1,0 +1,9 @@
+@import "../../assets/scss/mixins";
+
+.home {
+  padding: 50px 0;
+}
+.home-content {
+  width: 100%;
+  @include flex(center, center, column);
+}

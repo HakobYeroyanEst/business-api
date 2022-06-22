@@ -1,0 +1,19 @@
+@import "../../../../assets/scss/variables";
+
+.table-row {
+  border-top: 10px solid $background-color;
+  transition: background-color .3s ease-in-out;
+
+  &:hover {
+    background-color: #f4f3f5;
+  }
+}
+.table-data {
+  font-size: 18px;
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+}

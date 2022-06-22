@@ -1,0 +1,21 @@
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/variables";
+
+.back {
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  @include flex(center, center, row);
+  cursor: pointer;
+
+  &:hover {
+    svg path {
+      fill: $primary;
+    }
+  }
+}
+.back svg path {
+  fill: #000000;
+  transition: fill .3s ease-in-out;
+}

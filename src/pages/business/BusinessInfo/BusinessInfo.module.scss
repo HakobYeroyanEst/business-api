@@ -1,0 +1,74 @@
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/variables";
+
+.business-info {
+  width: 80%;
+  @include flex(flex-start, space-between, row);
+  margin-top: 40px;
+}
+.business-info__contact {
+  margin-top: 30px;
+  width: 50%;
+  @include flex(flex-start, center, row);
+}
+.business-info__contact_section {
+  width: 100%;
+  @include flex(flex-start, center, column);
+}
+.business-info__contact_section_title {
+  font-size: 22px;
+  font-weight: 500;
+}
+.business-info__contact_section_text {
+  color: $gray;
+  font-size: 16px;
+  margin-top: 10px;
+  line-break: anywhere;
+
+  &:first-of-type {
+    margin-top: 30px;
+  }
+}
+
+.business-info__places {
+  width: 50%;
+  background-color: #ffffff;
+  padding: 30px;
+}
+.business-info__places_title {
+  @extend .business-info__contact_section_title;
+}
+
+@media only screen and (max-width: 1400px) {
+  .business-info {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .business-info__contact {
+    width: 100%;
+  }
+  .business-info__contact_section {
+    align-items: center;
+  }
+
+  .business-info__places {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .business-info__contact {
+    flex-direction: column;
+    margin-top: 0;
+  }
+  .business-info__contact_section {
+    margin-bottom: 30px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

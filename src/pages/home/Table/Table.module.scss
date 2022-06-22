@@ -1,0 +1,52 @@
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/variables";
+
+.table-loader {
+  height: 70vh;
+  @include flex(center, center, row);
+}
+
+.table, .table th, .table tr, .table td {
+  border-collapse: collapse;
+}
+.table-wrapper {
+  width: 100%;
+  max-height: 70vh;
+  overflow-y: auto;
+
+  @include scroll();
+}
+.table {
+  width: 100%;
+}
+.table tr {
+  background-color: #ffffff;
+}
+.table th, .table td {
+  vertical-align: middle;
+}
+.table th, .table td a {
+  text-align: left;
+  padding: 30px 80px;
+}
+.table-heading {
+  color: $primary;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 768px) {
+  .table {
+    width: unset;
+    max-width: 900px;
+
+    td:last-of-type {
+      width: 700px;
+
+      a {
+        width: 700px;
+      }
+    }
+  }
+}
