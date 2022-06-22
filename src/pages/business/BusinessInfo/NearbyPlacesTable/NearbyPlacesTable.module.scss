@@ -20,6 +20,10 @@
   border-top: 10px solid #ffffff;
   transition: background-color .3s ease-in-out;
 
+  &.table-row__active {
+    background-color: #dcdbdc;
+  }
+
   &:hover {
     background-color: #dcdbdc;
   }

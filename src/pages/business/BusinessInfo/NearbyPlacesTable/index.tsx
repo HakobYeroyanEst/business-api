@@ -17,7 +17,7 @@ const NearbyPlacesTable: FC<INearbyPlacesTableProps> = ({ business }) => {
   const { list, error } = useSelector((state: RootState) => state.business);
 
   const nearby = useMemo<IBusiness[]>(() => {
-    return list.filter((item) => (item.address.city === business.address.city) && item.id !== business.id);
+    return list.filter((item) => item.address.city === business.address.city);
   }, [list, business]);
 
   if (error) {
@@ -28,17 +28,17 @@ const NearbyPlacesTable: FC<INearbyPlacesTableProps> = ({ business }) => {
     <div className={styles['table-wrapper']}>
       <table className={styles['table']}>
         <tbody>
-          {nearby.map((business) => {
+          {nearby.map((item) => {
             return (
-              <tr key={business.id}>
+              <tr className={(item.id === business.id) ? styles['table-row__active'] : ''} key={item.id}>
                 <td>
-                  <Link to={`/business/${business.id}`}>
-                    {business.name}
+                  <Link to={`/business/${item.id}`}>
+                    {item.name}
                   </Link>
                 </td>
                 <td>
                   <Link to={`/business/${business.id}`}>
-                    {business.address.street}, {business.address.number}, {business.address.country} {business.address.zip}
+                    {item.address.street}, {item.address.number}, {item.address.country} {item.address.zip}
                   </Link>
                 </td>
               </tr>
